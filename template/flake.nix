@@ -13,8 +13,8 @@
     ];
 
     outputsBuilder = channels: {
-      defaultPackage = channels.nixpkgs.callPackage ./package.nix {};
+      defaultPackage = channels.nixpkgs.callPackage ./package.nix { };
       devShell = channels.nixpkgs.devshell.fromTOML ./devshell.toml;
     };
-    };
+  };
 }
