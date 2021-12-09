@@ -2,7 +2,7 @@
   description = "A very basic flake";
 
   inputs.devshell.url = "github:numtide/devshell";
-  inputs.fup.url = "github:gytis-ivaskevicius/flake-utils-plus/1.3.0";
+  inputs.fup.url = "github:gytis-ivaskevicius/flake-utils-plus/v1.3.1";
 
   outputs = inputs@{ self, devshell, fup, nixpkgs }: fup.lib.mkFlake {
 
