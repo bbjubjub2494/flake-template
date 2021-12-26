@@ -1,1 +1,1 @@
-(import lib/compat.nix).defaultNix
+(import nix/compat.nix).defaultNix
