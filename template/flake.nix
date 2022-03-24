@@ -1,6 +1,6 @@
 # The flake file is the entry point for nix commands
 {
-  description = "A very basic flake";
+  description = "An example flake";
 
   # Inputs are how Nix can use code from outside the flake during evaluation.
   inputs.devshell.url = "github:numtide/devshell";
