@@ -1,2 +1,2 @@
 # This file allows nix-build to find the flake
-(import nix/compat.nix).defaultNix
+(import nix/flake-compat.nix).defaultNix
