@@ -1,3 +1,2 @@
-{ devshell }:
-
+{devshell}:
 devshell.fromTOML ./devshell.toml

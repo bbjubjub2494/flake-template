@@ -9,17 +9,23 @@
   inputs.flake-compat.flake = false;
 
   # Outputs are the public-facing interface to the flake.
-  outputs = inputs@{ self, devshell, fup, nixpkgs, ... }: fup.lib.mkFlake {
+  outputs = inputs @ {
+    self,
+    devshell,
+    fup,
+    nixpkgs,
+    ...
+  }:
+    fup.lib.mkFlake {
+      inherit self inputs;
 
-    inherit self inputs;
+      sharedOverlays = [
+        devshell.overlay
+      ];
 
-    sharedOverlays = [
-      devshell.overlay
-    ];
-
-    outputsBuilder = channels: {
-      defaultPackage = channels.nixpkgs.callPackage nix/package.nix { };
-      devShell = channels.nixpkgs.callPackage nix/devshell.nix { };
+      outputsBuilder = channels: {
+        defaultPackage = channels.nixpkgs.callPackage nix/package.nix {};
+        devShell = channels.nixpkgs.callPackage nix/devshell.nix {};
+      };
     };
-  };
 }
