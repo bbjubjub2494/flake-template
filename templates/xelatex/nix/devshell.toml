@@ -1,0 +1,17 @@
+name = "example"
+
+imports = [ "git.hooks" ]
+
+[devshell]
+packages = [ "texlive.combined.scheme-full", "latexrun" ]
+
+[[commands]]
+command = "task"
+package = "go-task"
+
+[git.hooks]
+enable = true
+pre-commit.text = """
+#!/usr/bin/env bash -e
+task
+"""

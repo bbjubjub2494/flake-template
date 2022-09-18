@@ -1,10 +1,15 @@
 {
   description = "A very basic flake template";
 
-  outputs = _: {
+  outputs = { nixpkgs, ... }: {
     templates.default = {
       path = templates/default;
-      description = "A bare-bone flakes with some sugar";
+      description = "A bare-bone flake with some sugar";
+    };
+
+    templates.xelatex = {
+      path = templates/xelatex;
+      description = "A XeLaTex document";
     };
   };
 }
